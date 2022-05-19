@@ -1,0 +1,48 @@
+.card {
+    box-sizing: border-box;
+    width: 200px;
+    height: 225px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .50);
+    padding: 16px;
+    text-align: center;
+    line-height: 1.65rem;
+    user-select: none;
+    transition: 0.5s opacity;
+
+    &.question {
+        background-color: rgba(black, 0.75);
+        color: white;
+    }
+
+    &:not(.question) {
+        cursor: pointer;
+    }
+
+    &.hide:not(.selected) {
+        opacity: 0.25;
+    }
+
+    &.has-group {
+        position: relative;
+
+        &::before {
+            content: attr(data-group);
+            position: absolute;
+            top:   -10px;
+            right: -10px;
+            background-color: #b71540;
+            box-sizing: border-box;
+            width:  20px;
+            height: 20px;
+            color: white;
+            padding: 16px;
+            border-radius: 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

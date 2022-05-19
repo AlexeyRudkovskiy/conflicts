@@ -1,0 +1,28 @@
+.button {
+    border: none;
+    padding: 8px 16px;
+    background-color: rgba(black, 0.5);
+    color: rgba(white, 0.9);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.25s background-color, 0.25s box-shadow;
+    outline: none;
+
+    &.button-green {
+        background-color: #38ada9;
+
+        &:focus {
+            box-shadow: 0 0 0 4px rgba(#38ada9, .5);
+        }
+
+        &:hover {
+            background-color: #079992;
+            box-shadow: 0 3px 12px rgba(black, 0.25);
+        }
+    }
+}

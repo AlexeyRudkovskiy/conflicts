@@ -1,0 +1,22 @@
+.input {
+    border: none;
+    background-color: rgba(white, 0.25);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.1s box-shadow;
+
+    &:focus {
+        box-shadow: 0 0 0 4px rgba(white, 0.5);
+    }
+
+    &::placeholder {
+        color: rgba(white, .35);
+    }
+}

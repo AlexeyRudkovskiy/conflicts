@@ -1,0 +1,17 @@
+.game-over-popup {
+    .players-list {
+        margin-top: 2rem;
+        div {
+            margin-top: 1rem;
+            color: rgba(white, 0.75);
+            text-align: center;
+
+            .points {
+                margin-left: 0.5rem;
+                font-weight: bold;
+                color: #f6b93b;
+            }
+        }
+    }
+}
+

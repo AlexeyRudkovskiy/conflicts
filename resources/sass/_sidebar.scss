@@ -1,0 +1,69 @@
+.sidebar {
+    width: 275px;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    background-color: #0a3d62;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .5);
+
+    .current {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 16px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(white, 0.1);
+        box-sizing: border-box;
+
+        .current-player {
+            margin-top: 16px;
+            color: rgba(white, .9);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
+    .players-list {
+        background-color: rgba(0, 0, 0, .25);
+        min-height: 225px*2 + 32px + 16px;
+        width: 100%;
+        margin-top: auto;
+        padding: 16px;
+        box-sizing: border-box;
+
+        h3 {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            li {
+                color: rgba(white, 0.75);
+                margin-top: 10px;
+                position: relative;
+
+                &.active {
+                    font-weight: bold;
+                    color: rgba(white, 0.9);
+                }
+
+                &.me {
+                    color: #38ada9;
+                }
+
+                &::after {
+                    content: attr(data-points);
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
