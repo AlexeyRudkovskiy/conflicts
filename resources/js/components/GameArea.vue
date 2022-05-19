@@ -67,23 +67,8 @@ export default {
             is_admin: false,
 
             cards: [
-                // { id: '1', 'content': 'hello world', type: 'answer' },
-                // { id: '2', 'content': 'foo bfgds', type: 'answer' },
-                // { id: '3', 'content': 'gsdgd gsd', type: 'answer' },
-                // { id: '4', 'content': 'gdsg dsgsd gsdg sdg sgdsdgsgdsg dsg54hdhnrh drh drh fs', type: 'answer' },
-                // { id: '5', 'content': 'gsdgd gsd', type: 'answer' },
-                // { id: '6', 'content': 'gdsg dsgsd gsdg sdg sgdsdgsgdsg dsg54hdhnrh drh drh fs', type: 'answer' },
             ],
             my_cards: [
-                // { id: '7', 'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.', type: 'answer' },
-                // { id: '8', 'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.', type: 'answer' },
-                // { id: '9', 'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.', type: 'answer' },
-                // { id: '10', 'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.', type: 'answer' },
-                // { id: '11', 'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.', type: 'answer' },
-                // { id: '12', 'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.', type: 'answer' },
-                // { id: '13', 'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.', type: 'answer' },
-                // { id: '14', 'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.', type: 'answer' },
-                // { id: '15   ', 'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.', type: 'answer' },
             ]
         };
     },
@@ -130,9 +115,9 @@ export default {
             }
 
             /// todo: uncomment on live
-            // if (this.current_player.username === this.my_username) {
-            //     return ;
-            // }
+            if (this.current_player.username === this.my_username) {
+                return ;
+            }
 
             axios.post(`/api/place-answer`, { key: this.current_game.key, answer_id: card.id })
                 .then(response => this.removeCard(card.id))
