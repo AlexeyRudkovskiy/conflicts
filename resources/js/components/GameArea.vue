@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="content">
-        <div class="answers">
+        <transition-group name="block" class="answers">
             <template v-if="current_question !== null && current_question.answers > 1">
                 <template v-for="(_cards, index) in groupedCards">
                     <card v-for="card in _cards" :card="card" :key="card.id" :group="index" @click="selectAnswer" />
@@ -30,10 +30,10 @@
             <template v-else>
                 <card v-for="card in cards" :card="card" :key="card.id" :group="null" @click="selectAnswer" />
             </template>
-        </div>
-        <div class="my-cards">
+        </transition-group>
+        <transition-group name="block" class="my-cards">
             <card v-for="card in my_cards" :card="card" :key="card.id" :group="null" @click="placeAnswer" />
-        </div>
+        </transition-group>
     </div>
 
     <into-popup v-if="!is_game_running"
@@ -114,7 +114,6 @@ export default {
                 return ;
             }
 
-            /// todo: uncomment on live
             if (this.current_player.username === this.my_username) {
                 return ;
             }
@@ -217,5 +216,35 @@ export default {
 </script>
 
 <style scoped>
-
+.block-enter {
+    opacity: 0;
+}
+.block-enter-active {
+    animation : slide-in .5s ease-out forwards;
+    transition : opacity .5s;
+}
+.block-leave {
+    opacity: 1;
+}
+.block-leave-active {
+    animation : slide-out .5s ease-out forwards;
+    transition : opacity .5s;
+    opacity: 0;
+}
+@keyframes slide-in {
+    from {
+        transform: rotateY(90deg);
+    }
+    to {
+        transform: rotateY(0);
+    }
+}
+@keyframes slide-out {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(-90deg);
+    }
+}
 </style>

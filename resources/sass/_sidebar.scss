@@ -19,7 +19,9 @@
         flex-direction: column;
         padding: 16px;
         width: 100%;
-        height: 100%;
+        height: 50vh;
+        flex-shrink: 0;
+        flex-grow: 0;
         background-color: rgba(white, 0.1);
         box-sizing: border-box;
 
@@ -33,8 +35,10 @@
 
     .players-list {
         background-color: rgba(0, 0, 0, .25);
-        min-height: 225px*2 + 32px + 16px;
         width: 100%;
+        height: 50vh;
+        flex-shrink: 0;
+        flex-grow: 0;
         margin-top: auto;
         padding: 16px;
         box-sizing: border-box;
